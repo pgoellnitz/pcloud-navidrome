@@ -3,10 +3,12 @@ services:
   navidrome:
     image: deluan/navidrome:latest
     container_name: navidrome
-    #user: 1000:1000 # should be owner of volumes
     ports:
       - "4040:4533"
     restart: unless-stopped
+    environment:
+      ND_DEVACTIVITYPANEL: false
+      ND_SCANSCHEDULE: "@daily"
     depends_on: 
       pcloud:
         condition: service_healthy
