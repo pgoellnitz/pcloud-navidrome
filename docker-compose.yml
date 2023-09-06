@@ -28,8 +28,8 @@ services:
     healthcheck:
       test: ["CMD", "ls", "/music"]
       interval: 10s
-      timeout: 1s
-      retries: 12
+      timeout: 3s
+      retries: 6
   pcloud:
     image: zcalusic/pcloud
     container_name: pcloud
@@ -48,15 +48,15 @@ services:
       test: ["CMD", "ls", "/mnt/pcloud-data/${PCLOUD_MUSIC_FOLDER}"]
       interval: 10s
       timeout: 3s
-      retries: 1 #2
+      retries: 3
   autoheal:
     restart: always
     image: willfarrell/autoheal
     container_name: autoheal
     environment:
-      - AUTOHEAL_CONTAINER_LABEL=all
-        #- AUTOHEAL_INTERVAL=60
-        #- AUTOHEAL_START_PERIOD=120
+      AUTOHEAL_CONTAINER_LABEL=all
+      AUTOHEAL_INTERVAL=60
+      AUTOHEAL_START_PERIOD=120
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 volumes:
