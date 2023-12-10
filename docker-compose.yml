@@ -9,14 +9,16 @@ services:
     environment:
       ND_DEVACTIVITYPANEL: "false"
       ND_SCANSCHEDULE: "@daily"
-    depends_on: 
+      ND_SPOTIFY_ID: ${ND_SPOTIFY_ID}
+      ND_SPOTIFY_SECRET: ${ND_SPOTIFY_SECRET}
+    depends_on:
       pcloud:
         condition: service_healthy
     volumes:
       - type: volume
         source: navidrome-config
         target: /data
-      - type: bind 
+      - type: bind
         source: "${HOST_PCLOUD_MNT_FOLDER}/${PCLOUD_MUSIC_FOLDER}"
         target: /music
         read_only: true
