@@ -11,6 +11,7 @@ services:
       ND_SCANSCHEDULE: "@daily"
       ND_SPOTIFY_ID: ${ND_SPOTIFY_ID}
       ND_SPOTIFY_SECRET: ${ND_SPOTIFY_SECRET}
+      ND_ENABLEFAVOURITES: "false"
     depends_on:
       pcloud:
         condition: service_healthy
