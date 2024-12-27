@@ -34,7 +34,7 @@ services:
       timeout: 3s
       retries: 6
   pcloud:
-    image: zcalusic/pcloud
+    image: pgoellnitz/pcloud_2fa
     container_name: pcloud
     privileged: true
     restart: unless-stopped
