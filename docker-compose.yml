@@ -1,7 +1,7 @@
 version: "3.2"
 services:
   navidrome:
-    image: deluan/navidrome:latest
+    image: deluan/navidrome:0.54.3
     container_name: navidrome
     ports:
       - "4040:4533"
@@ -54,7 +54,7 @@ services:
       retries: 3
   autoheal:
     restart: always
-    image: willfarrell/autoheal
+    image: willfarrell/autoheal:1.2.0
     container_name: autoheal
     environment:
       AUTOHEAL_CONTAINER_LABEL: all
