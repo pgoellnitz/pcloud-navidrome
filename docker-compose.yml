@@ -9,8 +9,6 @@ services:
     environment:
       ND_DEVACTIVITYPANEL: "false"
       ND_SCANSCHEDULE: "@daily"
-      ND_SPOTIFY_ID: ${ND_SPOTIFY_ID}
-      ND_SPOTIFY_SECRET: ${ND_SPOTIFY_SECRET}
       ND_ENABLEFAVOURITES: "false"
     depends_on:
       pcloud:
